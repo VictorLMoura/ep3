@@ -54,3 +54,16 @@ class tabuleiro:
         self.window.mainloop()
 app= tabuleiro()
 app.iniciar()
+
+class Jogo:
+    def __init_(self):
+        self.jogador= 1
+        
+    def recebe_jogada(row,column):
+        muda_jogador(self)
+        
+    def muda_jogador(self):
+        if (self.jogador==1):
+            self.jogador=2
+        if (self.jogador==2):
+            self.jogador=1
