@@ -5,7 +5,7 @@ class tabuleiro:
 #CRIANDO OS BOTOES    
         self.window = tk.Tk()
         #DANDO UM NOME A JANELA
-        self.window.title("Jogo da velha")
+        self.window.title("Jogo da Velha!")
         self.window.geometry("300x300")
         self.window.rowconfigure(0, minsize=100,weight=1)
         self.window.rowconfigure(1,minsize=100,weight=1)
