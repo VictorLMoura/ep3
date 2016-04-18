@@ -6,13 +6,18 @@ class tabuleiro:
         self.window = tk.Tk()
         #DANDO UM NOME A JANELA
         self.window.title("Jogo da Velha!")
-        self.window.geometry("300x300")
+        #DANDO TAMANHO AO TABULEIRO
+        self.window.geometry("300x325")
+        #DANDO UM TAMANHO AOS BOTOES
         self.window.rowconfigure(0, minsize=100,weight=1)
         self.window.rowconfigure(1,minsize=100,weight=1)
         self.window.rowconfigure(2, minsize=100,weight=1)
         self.window.columnconfigure(0, minsize=100,weight=1)
         self.window.columnconfigure(1, minsize=100,weight=1)
         self.window.columnconfigure(2, minsize=100,weight=1)
+        #DANDO TAMANHO A INDICAÇÃO DE JOGADOR
+        self.window.rowconfigure(3, minsize=25,weight=1)
+        
         botao_00 = tk.Button (self.window) #00 é a localização do botao esse no caso é o superior esquerdo
         botao_00.grid(row=0,column=0,sticky="nswe")
 
@@ -39,6 +44,9 @@ class tabuleiro:
 
         botao_22 = tk.Button (self.window)
         botao_22.grid(row=2,column=2,sticky="nswe")
+        
+        botao_jogador = tk.Button(self.window)
+        botao_jogador.grid(row = 3,sticky = "nswe")
 
 
 
