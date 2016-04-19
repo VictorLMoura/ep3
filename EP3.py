@@ -6,10 +6,8 @@ class tabuleiro:
         self.window = tk.Tk()
         #DANDO UM NOME A JANELA
         self.window.title("Jogo da Velha!")
-        #realizar ação quando clicado
-        self.botao_00.configure(command= self.botao_00_clicado
         #DANDO TAMANHO AO TABULEIRO
-        self.window.geometry("300x325")#COMEÇOU A DAR ERRO AQUI DO NADA...
+        self.window.geometry("300x325")
         #DANDO UM TAMANHO AOS BOTOES
         self.window.rowconfigure(0, minsize=100,weight=1)
         self.window.rowconfigure(1,minsize=100,weight=1)
@@ -19,9 +17,11 @@ class tabuleiro:
         self.window.columnconfigure(2, minsize=100,weight=1)
         #DANDO TAMANHO A INDICAÇÃO DE JOGADOR USANDO LABEL
     
-        self.label_status = tk.label()
+        label = tk.Label(self.window)
+        label.configure(font="Courier 20 bold")
+        label.grid(row=0, column=0, columnspan=2, sticky="nsew")    
+        self.label_status = tk.Label()#NÃO SEI O QUE DEU ERRADO AQUI
         self.label.configure(text='Jogador 1')
-        self.label_status.grid(row=1, column=0, colunmspam=3)
         
         botao_00 = tk.Button (self.window) #00 é a localização do botao esse no caso é o superior esquerdo
         #REALIZAR AÇÃO QUANDO CLICADO
@@ -54,27 +54,36 @@ class tabuleiro:
         
         botao_jogador = tk.Button(self.window)
         botao_jogador.grid(row = 3,sticky = "nsew")
-    
-    #AÇÕES DOS BOTÕES , SÓ UM EXEMPLO
+
+  #AÇÕES DOS BOTÕES , SÓ UM EXEMPLO
     def botao_00clicado(i,j):
-        self.botao_clic
+        self.botao_clicado
         print('botao [0],[1]'.format(i,j))
+        recebe_jogada(0,0)
     def botao_01clicado(i,j):
         print02('botao [0],[1]'.format(i,j))
+        recebe_jogada(0,1)
     def botao_10clicado(i,j):
         print('botao [0],[1]'.format(i,j))
+        recebe_jogada(1,0)
     def botao_20clicado(i,j):
         print('botao [0],[1]'.format(i,j))
+        recebe_jogada(2,0)
     def botao_11clicado(i,j):
         print('botao [0],[1]'.format(i,j))
+        recebe_jogada(1,1)
     def botao_12clicado(i,j):
         print('botao [0],[1]'.format(i,j))
+        recebe_jogada(1,2)
     def botao_21clicado(i,j):
         print('botao [0],[1]'.format(i,j))
+        recebe_jogada(2,1)
     def botao_22clicado(i,j):
         print('botao [0],[1]'.format(i,j))
+        recebe_jogada(2,2)
     def botao_02clicado(i,j):
         print('botao [0],[1]'.format(i,j))
+        recebe_jogada(0,2)
 
     def iniciar(self):
         self.window.mainloop()
@@ -84,12 +93,15 @@ app.iniciar()
 class Jogo:
     def __init_(self):
         self.jogador= 1
-        
-    def recebe_jogada(row,column):
-        muda_jogador(self)
+
+    def recebe_jogada(i,j):
+        muda_jogador(self)      
         
     def muda_jogador(self):
         if (self.jogador==1):
+            self.label.configure(text='Jogador 2')
             self.jogador=2
+            
         if (self.jogador==2):
+            self.label.configure(text='Jogador 1')
             self.jogador=1
