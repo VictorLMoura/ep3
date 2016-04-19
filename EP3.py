@@ -6,8 +6,10 @@ class tabuleiro:
         self.window = tk.Tk()
         #DANDO UM NOME A JANELA
         self.window.title("Jogo da Velha!")
+        #realizar ação quando clicado
+        self.botao_00.configure(command= self.botao_00_clicado
         #DANDO TAMANHO AO TABULEIRO
-        self.window.geometry("300x325")
+        self.window.geometry("300x325")#COMEÇOU A DAR ERRO AQUI DO NADA...
         #DANDO UM TAMANHO AOS BOTOES
         self.window.rowconfigure(0, minsize=100,weight=1)
         self.window.rowconfigure(1,minsize=100,weight=1)
@@ -15,40 +17,64 @@ class tabuleiro:
         self.window.columnconfigure(0, minsize=100,weight=1)
         self.window.columnconfigure(1, minsize=100,weight=1)
         self.window.columnconfigure(2, minsize=100,weight=1)
-        #DANDO TAMANHO A INDICAÇÃO DE JOGADOR
-        self.window.rowconfigure(3, minsize=25,weight=1)
+        #DANDO TAMANHO A INDICAÇÃO DE JOGADOR USANDO LABEL
+    
+        self.label_status = tk.label()
+        self.label.configure(text='Jogador 1')
+        self.label_status.grid(row=1, column=0, colunmspam=3)
         
         botao_00 = tk.Button (self.window) #00 é a localização do botao esse no caso é o superior esquerdo
-        botao_00.grid(row=0,column=0,sticky="nswe")
+        #REALIZAR AÇÃO QUANDO CLICADO
+        self.botao_00.configure(command= self.botao_00_clicado)        
+        botao_00.grid(row=0,column=0,sticky="nsew")
 
         botao_01 = tk.Button (self.window)
-        botao_01.grid(row=0,column=1,sticky="nswe")
+        botao_01.grid(row=0,column=1,sticky="nsew")
 
         botao_02 =tk.Button (self.window)
-        botao_02.grid (row=0,column=2,sticky="nswe")
+        botao_02.grid (row=0,column=2,sticky="nsew")
 
         botao_10=tk.Button (self.window)
-        botao_10.grid(row=1,column=0,sticky="nswe")
+        botao_10.grid(row=1,column=0,sticky="nsew")
 
         botao_20=tk.Button (self.window)
-        botao_20.grid(row=2,column=0,sticky="nswe")
+        botao_20.grid(row=2,column=0,sticky="nsew")
 
         botao_11=tk.Button (self.window)
-        botao_11.grid(row=1,column=1,sticky="nswe")
+        botao_11.grid(row=1,column=1,sticky="nsew")
 
         botao_21=tk.Button (self.window)
-        botao_21.grid(row=2,column=1,sticky="nswe")
+        botao_21.grid(row=2,column=1,sticky="nsew")
 
         botao_12=tk.Button (self.window)
-        botao_12.grid(row=1,column=2,sticky="nswe")
+        botao_12.grid(row=1,column=2,sticky="nsew")
 
         botao_22 = tk.Button (self.window)
-        botao_22.grid(row=2,column=2,sticky="nswe")
+        botao_22.grid(row=2,column=2,sticky="nsew")
         
         botao_jogador = tk.Button(self.window)
-        botao_jogador.grid(row = 3,sticky = "nswe")
-
-
+        botao_jogador.grid(row = 3,sticky = "nsew")
+    
+    #AÇÕES DOS BOTÕES , SÓ UM EXEMPLO
+    def botao_00clicado(i,j):
+        self.botao_clic
+        print('botao [0],[1]'.format(i,j))
+    def botao_01clicado(i,j):
+        print02('botao [0],[1]'.format(i,j))
+    def botao_10clicado(i,j):
+        print('botao [0],[1]'.format(i,j))
+    def botao_20clicado(i,j):
+        print('botao [0],[1]'.format(i,j))
+    def botao_11clicado(i,j):
+        print('botao [0],[1]'.format(i,j))
+    def botao_12clicado(i,j):
+        print('botao [0],[1]'.format(i,j))
+    def botao_21clicado(i,j):
+        print('botao [0],[1]'.format(i,j))
+    def botao_22clicado(i,j):
+        print('botao [0],[1]'.format(i,j))
+    def botao_02clicado(i,j):
+        print('botao [0],[1]'.format(i,j))
 
     def iniciar(self):
         self.window.mainloop()
