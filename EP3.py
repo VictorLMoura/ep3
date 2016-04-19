@@ -17,11 +17,11 @@ class tabuleiro:
         self.window.columnconfigure(2, minsize=100,weight=1)
         #DANDO TAMANHO A INDICAÇÃO DE JOGADOR USANDO LABEL
     
-        label = tk.Label(self.window)
-        label.configure(font="Courier 20 bold")
-        label.grid(row=0, column=0, columnspan=2, sticky="nsew")    
-        self.label_status = tk.Label()#NÃO SEI O QUE DEU ERRADO AQUI
-        self.label.configure(text='Jogador 1')
+        self.Label = tk.Label(self.window)
+        self.Label.configure(font="Courier 20 bold")
+        self.Label.grid(row=0, column=0, columnspan=2, sticky="nsew")    
+        self.Label_status = tk.Label()#NÃO SEI O QUE DEU ERRADO AQUI
+        self.Label.configure(text='Jogador 1')
         
         botao_00 = tk.Button (self.window) #00 é a localização do botao esse no caso é o superior esquerdo
         #REALIZAR AÇÃO QUANDO CLICADO
