@@ -17,11 +17,9 @@ class tabuleiro:
         self.window.columnconfigure(2, minsize=100,weight=1)
         #DANDO TAMANHO A INDICAÇÃO DE JOGADOR USANDO LABEL
     
-        self.Label = tk.Label(self.window)
-        self.Label.configure(font="Courier 20 bold")
-        self.Label.grid(row=0, column=0, columnspan=2, sticky="nsew")    
-        self.Label_status = tk.Label()#NÃO SEI O QUE DEU ERRADO AQUI
-        self.Label.configure(text='Jogador 1')
+           
+        #self.Label_status = tk.Label()#NÃO SEI O QUE DEU ERRADO AQUI
+        
         
         self.botao_00 = tk.Button (self.window) #00 é a localização do botao esse no caso é o superior esquerdo
         #REALIZAR AÇÃO QUANDO CLICADO
@@ -60,8 +58,10 @@ class tabuleiro:
         self.botao_22.grid(row=2,column=2,sticky="nsew")
         self.botao_22.configure(command= self.botao_22clicado)
         
-        self.botao_jogador = tk.Button(self.window)
-        self.botao_jogador.grid(row = 3,sticky = "nsew")
+        self.Label_vez = tk.Label(self.window)
+        self.Label_vez.configure(font="Courier 14 bold")
+        self.Label_vez.grid(row = 3, column = 0, columnspan=2)
+        self.Label_vez.configure(text='Vez do: Jogador 1')
         
 
   #AÇÕES DOS BOTÕES , SÓ UM EXEMPLO
