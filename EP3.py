@@ -63,6 +63,33 @@ class tabuleiro:
         self.Label_vez.grid(row = 3, column = 0, columnspan=2)
         self.Label_vez.configure(text='Vez do: Jogador 1')
         
+    def verifica_vencedor (self):
+        #AQUI O QUE EU PENSEI FOI QUE EXISTEM OITO COMBINAÇOES QUE FAZEM COM QUE ALGUEM GANHE AI EU COLOQUEI AS OITO PRO JOGADOR X PARA TESTAR
+        if botao_00["text"] =="X" and  botao_01["text"] =="X" and  botao_02["text"] =="X" :
+            self.botao_vencedor =  tk.Button(self.window)
+            self.botao_vencedor.configure(text= "O jogador 1 venceu")
+        if botao_00["text"] =="X" and  botao_10["text"] =="X" and  botao_20["text"] =="X" :
+            self.botao_vencedor =  tk.Button(self.window)
+            self.botao_vencedor.configure(text= "O jogador 1 venceu")
+        if botao_00["text"] =="X" and  botao_11["text"] =="X" and  botao_22["text"] =="X" :
+            self.botao_vencedor =  tk.Button(self.window)
+            self.botao_vencedor.configure(text= "O jogador 1 venceu")
+        if botao_10["text"] =="X" and  botao_11["text"] =="X" and  botao_12["text"] =="X" :
+            self.botao_vencedor =  tk.Button(self.window)
+            self.botao_vencedor.configure(text= "O jogador 1 venceu")
+        if botao_20["text"] =="X" and  botao_21["text"] =="X" and  botao_22["text"] =="X" :
+            self.botao_vencedor =  tk.Button(self.window)
+            self.botao_vencedor.configure(text= "O jogador 1 venceu")
+        if botao_01["text"] =="X" and  botao_11["text"] =="X" and  botao_21["text"] =="X" :
+            self.botao_vencedor =  tk.Button(self.window)
+            self.botao_vencedor.configure(text= "O jogador 1 venceu")
+        if botao_02["text"] =="X" and  botao_12["text"] =="X" and  botao_22["text"] =="X" :
+            self.botao_vencedor =  tk.Button(self.window)
+            self.botao_vencedor.configure(text= "O jogador 1 venceu")
+        if botao_02["text"] =="X" and  botao_11["text"] =="X" and  botao_20["text"] =="X" :
+            self.botao_vencedor =  tk.Button(self.window)
+            self.botao_vencedor.configure(text= "O jogador 1 venceu") 
+        
 
   #AÇÕES DOS BOTÕES , SÓ UM EXEMPLO
     def clique (self, i, j):
@@ -124,3 +151,6 @@ class Jogo:
         if (self.jogador==2):
             self.label.configure(text='Jogador 1')
             self.jogador=1
+    
+    
+        
