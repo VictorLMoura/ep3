@@ -109,18 +109,18 @@ class tabuleiro:
 app= tabuleiro()
 app.iniciar()
 
-#class Jogo:
- #   def __init_(self):
-  #      self.jogador= 1
+class Jogo:
+    def __init_(self):
+       self.jogador= 1
 
-  #  def recebe_jogada(i,j):
-    #    muda_jogador(self)      
+    def recebe_jogada(i,j):
+        muda_jogador(self)      
         
-   # def muda_jogador(self):
-    #    if (self.jogador==1):
-     #       self.label.configure(text='Jogador 2')
-      #      self.jogador=2
+    def muda_jogador(self):
+        if (self.jogador==1):
+            self.label.configure(text='Jogador 2')
+            self.jogador=2
             
-       # if (self.jogador==2):
-        #    self.label.configure(text='Jogador 1')
-         #   self.jogador=1
+        if (self.jogador==2):
+            self.label.configure(text='Jogador 1')
+            self.jogador=1
