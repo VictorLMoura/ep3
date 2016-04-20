@@ -2,7 +2,9 @@
 import tkinter as tk
 class tabuleiro:
     def __init__(self):
+        # import Jogo , precisamos importar a classe Jogo para usar o atributo jogador
 #CRIANDO OS BOTOES    
+        self.jogador=1
         self.window = tk.Tk()
         #DANDO UM NOME A JANELA
         self.window.title("Jogo da Velha!")
@@ -69,49 +71,84 @@ class tabuleiro:
         print ("botao {0} x {1} clicado".format(i,j))
     def botao_00clicado(self):
         self.clique(0,0)
-        self.botao_00.configure(text = "X")
+        if(self.jogador==1):
+            self.botao_00.configure(text = "X")
+        else:
+            self.botao_00.configure(text = "O")
+        muda_jogador()
        # recebe_jogada(0,0)
     def botao_01clicado(self):
         self.clique(0,1)
-        self.botao_01.configure(text = "X")
+        if(self.jogador==1):
+            self.botao_01.configure(text = "X")
+        else:
+            self.botao_01.configure(text = "O")   
+        muda_jogador()
       #  recebe_jogada(0,1)
     def botao_10clicado(self):
         self.clique(1,0)
-        self.botao_10.configure(text = "X")
+        if(self.jogador==1):
+            self.botao_10.configure(text = "X")
+        else:
+            self.botao_10.configure(text = "O")
+        muda_jogador()
      #   recebe_jogada(1,0)
     def botao_20clicado(self):
         self.clique(2,0)
-        self.botao_20.configure(text = "X")
+        if(self.jogador==1):
+            self.botao_20.configure(text = "X")
+        else:
+            self.botao_20.configure(text = "O")
+        muda_jogador()
       #  recebe_jogada(2,0)
     def botao_11clicado(self):
         self.clique(1,1)
-        self.botao_11.configure(text = "X")
+        if(self.jogador==1): 
+            self.botao_11.configure(text = "X")
+        else:
+            self.botao_11.configure(text = "O")
+        muda_jogador()
       #  recebe_jogada(1,1)
     def botao_12clicado(self):
         self.clique(1,2)
-        self.botao_12.configure(text = "X")
+        if(self.jogador==1):
+            self.botao_12.configure(text = "X")
+        else:
+            self.botao_12.configure(text = "O")
+        muda_jogador()
       #  recebe_jogada(1,2)
     def botao_21clicado(self):
         self.clique(2,1)
-        self.botao_21.configure(text = "X")
+        if(self.jogador==1):
+            self.botao_21.configure(text = "X")
+        else:
+            self.botao_21.configure(text = "O")
+        muda_jogador()
       #  recebe_jogada(2,1)
     def botao_22clicado(self):
         self.clique(2,2)
-        self.botao_22.configure(text = "X")
+        if(self.jogador==1):
+            self.botao_22.configure(text = "X")
+        else:
+            self.botao_22.configure(text = "O")
+        muda_jogador()
      #   recebe_jogada(2,2)
     def botao_02clicado(self):
         self.clique(0,2)
-        self.botao_02.configure(text = "X")
+        if(self.jogador==1):
+            self.botao_02.configure(text = "X")
+        else:
+            self.botao_02.configure(text = "O")
+        muda_jogador()
       #  recebe_jogada(0,2)
 
     def iniciar(self):
         self.window.mainloop()
-app= tabuleiro()
-app.iniciar()
 
 class Jogo:
     def __init_(self):
-       self.jogador= 1
+        import tabuleiro
+        self.jogador=1
 
     def recebe_jogada(i,j):
         muda_jogador(self)      
@@ -179,6 +216,7 @@ class Jogo:
         if botao_02["text"] =="O" and  botao_11["text"] =="O" and  botao_20["text"] =="O" :
             self.botao_vencedor =  tk.Button(self.window)
             self.botao_vencedor.configure(text= "O jogador 1 venceu") 
-        
+app= tabuleiro()
+app.iniciar()        
     
         
