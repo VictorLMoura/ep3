@@ -64,7 +64,7 @@ class tabuleiro:
         self.Label_vez.configure(font="Courier 14 bold")
         self.Label_vez.grid(row = 3, column = 0, columnspan=2)
         self.Label_vez.configure(text='Vez do: Jogador 1')
-        
+        #Precisamos descobrir como importar a classe Jogo para usar a muda_jogador
 
   #AÇÕES DOS BOTÕES , SÓ UM EXEMPLO
     def clique (self, i, j):
