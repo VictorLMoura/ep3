@@ -217,6 +217,8 @@ class Jogo:
             self.botao_vencedor =  tk.Button(self.window)
             self.botao_vencedor.configure(text= "O jogador 1 venceu") 
 app= tabuleiro()
-app.iniciar()        
+app.iniciar()
+#explicando para o patrick e pro digo
+print ("hello")
     
         
