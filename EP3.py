@@ -67,92 +67,6 @@ class tabuleiro:
         #Precisamos descobrir como importar a classe Jogo para usar a muda_jogador
 
   #AÇÕES DOS BOTÕES , SÓ UM EXEMPLO
-    def clique (self, i, j):
-        print ("botao {0} x {1} clicado".format(i,j))
-    def botao_00clicado(self):
-        self.clique(0,0)
-        if(self.jogador==1):
-            self.botao_00.configure(text = "X")
-        else:
-            self.botao_00.configure(text = "O")
-        muda_jogador()
-       # recebe_jogada(0,0)
-    def botao_01clicado(self):
-        self.clique(0,1)
-        if(self.jogador==1):
-            self.botao_01.configure(text = "X")
-        else:
-            self.botao_01.configure(text = "O")   
-        muda_jogador()
-      #  recebe_jogada(0,1)
-    def botao_10clicado(self):
-        self.clique(1,0)
-        if(self.jogador==1):
-            self.botao_10.configure(text = "X")
-        else:
-            self.botao_10.configure(text = "O")
-        muda_jogador()
-     #   recebe_jogada(1,0)
-    def botao_20clicado(self):
-        self.clique(2,0)
-        if(self.jogador==1):
-            self.botao_20.configure(text = "X")
-        else:
-            self.botao_20.configure(text = "O")
-        muda_jogador()
-      #  recebe_jogada(2,0)
-    def botao_11clicado(self):
-        self.clique(1,1)
-        if(self.jogador==1): 
-            self.botao_11.configure(text = "X")
-        else:
-            self.botao_11.configure(text = "O")
-        muda_jogador()
-      #  recebe_jogada(1,1)
-    def botao_12clicado(self):
-        self.clique(1,2)
-        if(self.jogador==1):
-            self.botao_12.configure(text = "X")
-        else:
-            self.botao_12.configure(text = "O")
-        muda_jogador()
-      #  recebe_jogada(1,2)
-    def botao_21clicado(self):
-        self.clique(2,1)
-        if(self.jogador==1):
-            self.botao_21.configure(text = "X")
-        else:
-            self.botao_21.configure(text = "O")
-        muda_jogador()
-      #  recebe_jogada(2,1)
-    def botao_22clicado(self):
-        self.clique(2,2)
-        if(self.jogador==1):
-            self.botao_22.configure(text = "X")
-        else:
-            self.botao_22.configure(text = "O")
-        muda_jogador()
-     #   recebe_jogada(2,2)
-    def botao_02clicado(self):
-        self.clique(0,2)
-        if(self.jogador==1):
-            self.botao_02.configure(text = "X")
-        else:
-            self.botao_02.configure(text = "O")
-        muda_jogador()
-      #  recebe_jogada(0,2)
-
-    def iniciar(self):
-        self.window.mainloop()
-
-class Jogo:
-    def __init_(self):
-        import tabuleiro
-        self.jogador=1
-
-    def recebe_jogada(i,j):
-        muda_jogador(self)      
-        
     def muda_jogador(self):
         if (self.jogador==1):
             self.label.configure(text='Jogador 2')
@@ -161,6 +75,86 @@ class Jogo:
         if (self.jogador==2):
             self.label.configure(text='Jogador 1')
             self.jogador=1
+    def clique (self, i, j):
+        print ("botao {0} x {1} clicado".format(i,j))
+    def botao_00clicado(self):
+        self.clique(0,0)
+        if(self.jogador==1):
+            self.botao_00.configure(text = "X")
+        else:
+            self.botao_00.configure(text = "O")
+        muda_jogador(self)
+       # recebe_jogada(0,0)
+    def botao_01clicado(self):
+        self.clique(0,1)
+        if(self.jogador==1):
+            self.botao_01.configure(text = "X")
+        else:
+            self.botao_01.configure(text = "O")   
+        muda_jogador(self)
+      #  recebe_jogada(0,1)
+    def botao_10clicado(self):
+        self.clique(1,0)
+        if(self.jogador==1):
+            self.botao_10.configure(text = "X")
+        else:
+            self.botao_10.configure(text = "O")
+        muda_jogador(self)
+     #   recebe_jogada(1,0)
+    def botao_20clicado(self):
+        self.clique(2,0)
+        if(self.jogador==1):
+            self.botao_20.configure(text = "X")
+        else:
+            self.botao_20.configure(text = "O")
+        muda_jogador(self)
+      #  recebe_jogada(2,0)
+    def botao_11clicado(self):
+        self.clique(1,1)
+        if(self.jogador==1): 
+            self.botao_11.configure(text = "X")
+        else:
+            self.botao_11.configure(text = "O")
+        muda_jogador(self)
+      #  recebe_jogada(1,1)
+    def botao_12clicado(self):
+        self.clique(1,2)
+        if(self.jogador==1):
+            self.botao_12.configure(text = "X")
+        else:
+            self.botao_12.configure(text = "O")
+        muda_jogador(self)
+      #  recebe_jogada(1,2)
+    def botao_21clicado(self):
+        self.clique(2,1)
+        if(self.jogador==1):
+            self.botao_21.configure(text = "X")
+        else:
+            self.botao_21.configure(text = "O")
+        muda_jogador(self)
+      #  recebe_jogada(2,1)
+    def botao_22clicado(self):
+        self.clique(2,2)
+        if(self.jogador==1):
+            self.botao_22.configure(text = "X")
+        else:
+            self.botao_22.configure(text = "O")
+        muda_jogador(self)
+     #   recebe_jogada(2,2)
+    def botao_02clicado(self):
+        self.clique(0,2)
+        if(self.jogador==1):
+            self.botao_02.configure(text = "X")
+        else:
+            self.botao_02.configure(text = "O")
+        muda_jogador(self)
+      #  recebe_jogada(0,2)
+
+    def iniciar(self):
+        self.window.mainloop()
+
+    def recebe_jogada(i,j):
+        muda_jogador(self)      
     
     def verifica_vencedor (self):
         #AQUI O QUE EU PENSEI FOI QUE EXISTEM OITO COMBINAÇOES QUE FAZEM COM QUE ALGUEM GANHE AI EU COLOQUEI AS OITO PRO JOGADOR X PARA VER SE RODAVA
