@@ -73,6 +73,7 @@ class tabuleiro:
         else:
             self.botao_00.configure(text = "O")
         self.muda_jogador()
+        verifica_vencedor()
        # recebe_jogada(0,0)
     def botao_01clicado(self):
         self.clique(0,1)
@@ -179,7 +180,7 @@ class Jogo:
         
     def Y_vencedor (self):
         self.botao_vencedor =  tk.Button(self.window)
-        self.botao_vencedor.configure(text= "O jogador 1 venceu")
+        self.botao_vencedor.configure(text= "O jogador 2 venceu")
     
     def verifica_vencedor (self):
         #AQUI O QUE EU PENSEI FOI QUE EXISTEM OITO COMBINAÇOES QUE FAZEM COM QUE ALGUEM GANHE AI EU COLOQUEI AS OITO PRO JOGADOR X PARA VER SE RODAVA
