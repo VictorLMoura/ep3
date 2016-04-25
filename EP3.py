@@ -2,7 +2,7 @@
 import tkinter as tk
 class tabuleiro:
     def __init__(self):
-        # import Jogo , precisamos importar a classe Jogo para usar o atributo jogador
+        #import Jogo #, precisamos importar a classe Jogo para usar o atributo jogador
 #CRIANDO OS BOTOES    
         self.jogador=1
         self.window = tk.Tk()
@@ -75,7 +75,7 @@ class tabuleiro:
             self.botao_00.configure(text = "X")
         else:
             self.botao_00.configure(text = "O")
-        muda_jogador()
+        self.muda_jogador()
        # recebe_jogada(0,0)
     def botao_01clicado(self):
         self.clique(0,1)
@@ -83,7 +83,7 @@ class tabuleiro:
             self.botao_01.configure(text = "X")
         else:
             self.botao_01.configure(text = "O")   
-        muda_jogador()
+        self.muda_jogador()
       #  recebe_jogada(0,1)
     def botao_10clicado(self):
         self.clique(1,0)
@@ -91,7 +91,7 @@ class tabuleiro:
             self.botao_10.configure(text = "X")
         else:
             self.botao_10.configure(text = "O")
-        muda_jogador()
+        self.muda_jogador()
      #   recebe_jogada(1,0)
     def botao_20clicado(self):
         self.clique(2,0)
@@ -99,7 +99,7 @@ class tabuleiro:
             self.botao_20.configure(text = "X")
         else:
             self.botao_20.configure(text = "O")
-        muda_jogador()
+        self.muda_jogador()
       #  recebe_jogada(2,0)
     def botao_11clicado(self):
         self.clique(1,1)
@@ -107,7 +107,7 @@ class tabuleiro:
             self.botao_11.configure(text = "X")
         else:
             self.botao_11.configure(text = "O")
-        muda_jogador()
+        self.muda_jogador()
       #  recebe_jogada(1,1)
     def botao_12clicado(self):
         self.clique(1,2)
@@ -115,7 +115,7 @@ class tabuleiro:
             self.botao_12.configure(text = "X")
         else:
             self.botao_12.configure(text = "O")
-        muda_jogador()
+        self.muda_jogador()
       #  recebe_jogada(1,2)
     def botao_21clicado(self):
         self.clique(2,1)
@@ -123,7 +123,7 @@ class tabuleiro:
             self.botao_21.configure(text = "X")
         else:
             self.botao_21.configure(text = "O")
-        muda_jogador()
+        self.muda_jogador()
       #  recebe_jogada(2,1)
     def botao_22clicado(self):
         self.clique(2,2)
@@ -131,7 +131,7 @@ class tabuleiro:
             self.botao_22.configure(text = "X")
         else:
             self.botao_22.configure(text = "O")
-        muda_jogador()
+        self.muda_jogador()
      #   recebe_jogada(2,2)
     def botao_02clicado(self):
         self.clique(0,2)
@@ -139,19 +139,31 @@ class tabuleiro:
             self.botao_02.configure(text = "X")
         else:
             self.botao_02.configure(text = "O")
-        muda_jogador()
+        self.muda_jogador()
       #  recebe_jogada(0,2)
+        
+    def muda_jogador(self):
+        if (self.jogador==1):
+            self.label.configure(text='Jogador 2')
+            self.jogador=2
+            
+        if (self.jogador==2):
+            self.label.configure(text='Jogador 1')
+            self.jogador=1
 
     def iniciar(self):
         self.window.mainloop()
+        
+        
+        
 
 class Jogo:
-    def __init_(self):
+    def __init__(self):
         import tabuleiro
         self.jogador=1
 
-    def recebe_jogada(i,j):
-        muda_jogador(self)      
+    def recebe_jogada(self,i,j):
+         self.muda_jogador()     
         
     def muda_jogador(self):
         if (self.jogador==1):
@@ -162,63 +174,53 @@ class Jogo:
             self.label.configure(text='Jogador 1')
             self.jogador=1
     
+    def X_vencedor (self):
+        self.botao_vencedor =  tk.Button(self.window)
+        self.botao_vencedor.configure(text= "O jogador 1 venceu")
+        
+    def Y_vencedor (self):
+        self.botao_vencedor =  tk.Button(self.window)
+        self.botao_vencedor.configure(text= "O jogador 1 venceu")
+    
     def verifica_vencedor (self):
         #AQUI O QUE EU PENSEI FOI QUE EXISTEM OITO COMBINAÇOES QUE FAZEM COM QUE ALGUEM GANHE AI EU COLOQUEI AS OITO PRO JOGADOR X PARA VER SE RODAVA
     # NAO SEI PQ A FUNCAO NAO TA RECONHECENDO OS NOMES DO BOTAO ENTAO POR ISSO NAO TA RODANDO MAS FORA ISSO ACHO QUE TA CERTO
-        if botao_00["text"] =="X" and  botao_01["text"] =="X" and  botao_02["text"] =="X" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_00["text"] =="X" and  botao_10["text"] =="X" and  botao_20["text"] =="X" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_00["text"] =="X" and  botao_11["text"] =="X" and  botao_22["text"] =="X" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_10["text"] =="X" and  botao_11["text"] =="X" and  botao_12["text"] =="X" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_20["text"] =="X" and  botao_21["text"] =="X" and  botao_22["text"] =="X" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_01["text"] =="X" and  botao_11["text"] =="X" and  botao_21["text"] =="X" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_02["text"] =="X" and  botao_12["text"] =="X" and  botao_22["text"] =="X" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_02["text"] =="X" and  botao_11["text"] =="X" and  botao_20["text"] =="X" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu") 
+        if self.botao_00["text"] =="X" and  self.botao_01["text"] =="X" and  self.botao_02["text"] =="X" :
+            self.X_vencedor ()
+        if self.botao_00["text"] =="X" and  self.botao_10["text"] =="X" and  self.botao_20["text"] =="X" :
+            self.X_vencedor ()
+        if self.botao_00["text"] =="X" and  self.botao_11["text"] =="X" and  self.botao_22["text"] =="X" :
+            self.X_vencedor ()
+        if self.botao_10["text"] =="X" and  self.botao_11["text"] =="X" and  self.botao_12["text"] =="X" :
+            self.X_vencedor ()
+        if self.botao_20["text"] =="X" and  self.botao_21["text"] =="X" and  self.botao_22["text"] =="X" :
+            self.X_vencedor ()
+        if self.botao_01["text"] =="X" and  self.botao_11["text"] =="X" and  self.botao_21["text"] =="X" :
+           self.X_vencedor ()
+        if self.botao_02["text"] =="X" and  self.botao_12["text"] =="X" and  self.botao_22["text"] =="X" :
+           self.X_vencedor ()
+        if self.botao_02["text"] =="X" and  self.botao_11["text"] =="X" and  self.botao_20["text"] =="X" :
+            self.X_vencedor () 
             
         #AQUI EU FIZ EXATAMENTE A MESMA COISA SO QUE PRO JOGADOR O            
             
-        if botao_00["text"] =="O" and  botao_01["text"] =="O" and  botao_02["text"] =="O" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_00["text"] =="O" and  botao_10["text"] =="O" and  botao_20["text"] =="O" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_00["text"] =="O" and  botao_11["text"] =="O" and  botao_22["text"] =="O" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_10["text"] =="O" and  botao_11["text"] =="O" and  botao_12["text"] =="O" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_20["text"] =="O" and  botao_21["text"] =="O" and  botao_22["text"] =="O" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_01["text"] =="O" and  botao_11["text"] =="O" and  botao_21["text"] =="O" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_02["text"] =="O" and  botao_12["text"] =="O" and  botao_22["text"] =="O" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu")
-        if botao_02["text"] =="O" and  botao_11["text"] =="O" and  botao_20["text"] =="O" :
-            self.botao_vencedor =  tk.Button(self.window)
-            self.botao_vencedor.configure(text= "O jogador 1 venceu") 
+        if self.botao_00["text"] =="O" and  self.botao_01["text"] =="O" and  self.botao_02["text"] =="O" :
+            self.Y_vencedor ()
+        if self.botao_00["text"] =="O" and  self.botao_10["text"] =="O" and  self.botao_20["text"] =="O" :
+            self.Y_vencedor ()
+        if self.botao_00["text"] =="O" and  self.botao_11["text"] =="O" and  self.botao_22["text"] =="O" :
+            self.Y_vencedor ()
+        if self.botao_10["text"] =="O" and  self.botao_11["text"] =="O" and  self.botao_12["text"] =="O" :
+            self.Y_vencedor ()
+        if self.botao_20["text"] =="O" and  self.botao_21["text"] =="O" and  self.botao_22["text"] =="O" :
+            self.Y_vencedor ()
+        if self.botao_01["text"] =="O" and  self.botao_11["text"] =="O" and  self.botao_21["text"] =="O" :
+            self.Y_vencedor ()
+        if self.botao_02["text"] =="O" and  self.botao_12["text"] =="O" and  self.botao_22["text"] =="O" :
+            self.Y_vencedor ()
+        if self.botao_02["text"] =="O" and  self.botao_11["text"] =="O" and  self.botao_20["text"] =="O" :
+            self.Y_vencedor () 
 app= tabuleiro()
 app.iniciar()
-#explicando para o patrick e pro digo
-print ("hello")
-    
+
         
