@@ -10,11 +10,12 @@ class tabuleiro:
         #DANDO UM NOME A JANELA
         self.window.title("Jogo da Velha!")
         #DANDO TAMANHO AO TABULEIRO
-        self.window.geometry("300x325")
+        self.window.geometry("400x400")
         #DANDO UM TAMANHO AOS BOTOES
         self.window.rowconfigure(0, minsize=100,weight=1)
         self.window.rowconfigure(1,minsize=100,weight=1)
         self.window.rowconfigure(2, minsize=100,weight=1)
+        self.window.rowconfigure(4, minsize=50,weight=1)
         self.window.columnconfigure(0, minsize=100,weight=1)
         self.window.columnconfigure(1, minsize=100,weight=1)
         self.window.columnconfigure(2, minsize=100,weight=1)
@@ -63,6 +64,12 @@ class tabuleiro:
         self.label_vez.configure(font="Courier 14 bold")
         self.label_vez.grid(row = 3, column = 0, columnspan=3)
         self.label_vez.configure(text='Vez do: Jogador 1')
+        
+        self.botao_reiniciar = tk.Button (self.window)
+        self.botao_reiniciar.grid (row=4, column = 1, sticky = "nsew")  
+        self.botao_reiniciar.configure (text = "Reiniciar")
+        self.botao_reiniciar.configure(font="Courier 14 bold")
+        self.botao_reiniciar.configure(command= self.reiniciar)
         
         self.B_00_clicado = False
         self.B_10_clicado = False
@@ -204,6 +211,29 @@ class tabuleiro:
     def iniciar(self):
         self.window.mainloop()
         
+    def reiniciar (self):
+            self.B_00_clicado = False
+            self.botao_00.configure(text = "")
+            self.B_10_clicado = False
+            self.botao_10.configure(text = "")
+            self.B_20_clicado = False
+            self.botao_20.configure(text = "")
+            self.B_11_clicado = False
+            self.botao_11.configure(text = "")
+            self.B_12_clicado = False
+            self.botao_12.configure(text = "")
+            self.B_01_clicado = False
+            self.botao_01.configure(text = "")
+            self.B_02_clicado = False
+            self.botao_02.configure(text = "")
+            self.B_22_clicado = False
+            self.botao_22.configure(text = "")
+            self.B_21_clicado = False
+            self.botao_21.configure(text = "")
+            self.venceu=False
+            self.jogador=1
+            self.label_vez.configure(text='Vez do: Jogador 1')
+            
     def muda_jogador(self):
         if (self.jogador==1):
             self.label_vez.configure(text='Vez do: Jogador 2')
@@ -242,9 +272,5 @@ class Jogo:
     def __init__(self):
         import tabuleiro
         #self.jogador=1
-
-         
-        
-
-app= tabuleiro()
+app = tabuleiro ()
 app.iniciar()
