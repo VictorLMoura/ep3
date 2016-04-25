@@ -18,9 +18,6 @@ class tabuleiro:
         self.window.columnconfigure(1, minsize=100,weight=1)
         self.window.columnconfigure(2, minsize=100,weight=1)
         #DANDO TAMANHO A INDICAÇÃO DE JOGADOR USANDO LABEL
-    
-           
-        #self.Label_status = tk.Label()#NÃO SEI O QUE DEU ERRADO AQUI
         
         
         self.botao_00 = tk.Button (self.window) #00 é a localização do botao esse no caso é o superior esquerdo
@@ -60,10 +57,10 @@ class tabuleiro:
         self.botao_22.grid(row=2,column=2,sticky="nsew")
         self.botao_22.configure(command= self.botao_22clicado)
         
-        self.Label_vez = tk.Label(self.window)
-        self.Label_vez.configure(font="Courier 14 bold")
-        self.Label_vez.grid(row = 3, column = 0, columnspan=2)
-        self.Label_vez.configure(text='Vez do: Jogador 1')
+        self.label_vez = tk.Label(self.window)
+        self.label_vez.configure(font="Courier 14 bold")
+        self.label_vez.grid(row = 3, column = 0, columnspan=2)
+        self.label_vez.configure(text='Vez do: Jogador 1')
         #Precisamos descobrir como importar a classe Jogo para usar a muda_jogador
 
   #AÇÕES DOS BOTÕES , SÓ UM EXEMPLO
@@ -141,39 +138,41 @@ class tabuleiro:
             self.botao_02.configure(text = "O")
         self.muda_jogador()
       #  recebe_jogada(0,2)
-        
-    def muda_jogador(self):
-        if (self.jogador==1):
-            self.label.configure(text='Jogador 2')
-            self.jogador=2
-            
-        if (self.jogador==2):
-            self.label.configure(text='Jogador 1')
-            self.jogador=1
 
     def iniciar(self):
         self.window.mainloop()
         
+    def muda_jogador(self):
+        if (self.jogador==1):
+            self.label_vez.configure(text='Vez do: Jogador 2')
+            self.jogador = 1 + 1
+            
+
         
+        elif(self.jogador==2):
+            self.label_vez.configure(text='Vez do: Jogador 1')
+            self.jogador= 2 - 1
+           
+        print (self.jogador)
         
 
 class Jogo:
     def __init__(self):
         import tabuleiro
-        self.jogador=1
+        #self.jogador=1
 
     def recebe_jogada(self,i,j):
          self.muda_jogador()     
         
-    def muda_jogador(self):
-        if (self.jogador==1):
-            self.label.configure(text='Jogador 2')
-            self.jogador=2
-            
-        if (self.jogador==2):
-            self.label.configure(text='Jogador 1')
-            self.jogador=1
-    
+#    def muda_jogador(self):
+#        if (self.jogador==1):
+#            self.label_vez.configure(text='Jogador 2')
+#            self.jogador=2
+#            
+#        if (self.jogador==2):
+#            self.label_vez.configure(text='Jogador 1')
+#            self.jogador=1
+#    
     def X_vencedor (self):
         self.botao_vencedor =  tk.Button(self.window)
         self.botao_vencedor.configure(text= "O jogador 1 venceu")
