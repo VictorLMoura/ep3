@@ -89,17 +89,23 @@ class Tabuleiro:
             self.label_vez = tk.Label(self.window)
             self.label_vez.configure(font="Courier 14 bold")
             self.label_vez.grid(row = 3, column = 0, columnspan=3)
-            self.label_vez.configure(text='Vez do: Jogador 2')
+            self.label_vez.configure(text='Vez do: Jogador 1')
         elif (self.jogo.jogador==2):
             self.label_vez = tk.Label(self.window)
             self.label_vez.configure(font="Courier 14 bold")
             self.label_vez.grid(row = 3, column = 0, columnspan=3)
-            self.label_vez.configure(text='Vez do: Jogador 1')
+            self.label_vez.configure(text='Vez do: Jogador 2')
+        if (self.jogo.venceu == 1):
+            self.label_vez.configure(text='Vencedor: Jogador 1')
+        elif (self.jogo.venceu == 2):
+            self.label_vez.configure(text='Vencedor: Jogador 2')
+        elif (self.jogo.venceu == 3):
+            self.label_vez.configure(text='O jogo empatou! É velha')
+           
         
     def botao_00clicado(self):
         if (self.jogo.B_00_clicado == 0):
-            if (self.jogo.venceu==0):
-                self.clique(0,0)
+            if (self.jogo.venceu==0):        
                 if(self.jogo.jogador==1):
                     self.jogo.B_00_clicado = 1
                     self.botao_00.configure(text = "X")
@@ -108,18 +114,13 @@ class Tabuleiro:
                     self.botao_00.configure(text = "O")
                 self.jogo.muda_jogador()
                 self.jogo.verifica_vencedor()
-        if (self.jogo.venceu == 1):
-            self.label_vez.configure(text='Vencedor: Jogador 1')
-        elif (self.jogo.venceu == 2):
-            self.label_vez.configure(text='Vencedor: Jogador 2')
-        elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')
+                self.clique(0,0)
             
        # recebe_jogada(0,0)
     def botao_01clicado(self):
         if (self.jogo.B_01_clicado == 0):
             if (self.jogo.venceu==0):
-                self.clique(0,1)
+                
                 if(self.jogo.jogador==1):
                     self.jogo.B_01_clicado = 1
                     self.botao_01.configure(text = "X")
@@ -128,18 +129,14 @@ class Tabuleiro:
                     self.botao_01.configure(text = "O")
                 self.jogo.muda_jogador()
                 self.jogo.verifica_vencedor()
-        if (self.jogo.venceu == 1):
-            self.label_vez.configure(text='Vencedor: Jogador 1')
-        elif (self.jogo.venceu == 2):
-            self.label_vez.configure(text='Vencedor: Jogador 2')
-        elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')
+                self.clique(0,1)
+        
         
       #  recebe_jogada(0,1)
     def botao_10clicado(self):
         if (self.jogo.B_10_clicado == 0):
             if (self.jogo.venceu==0):
-                self.clique(1,0)
+                
                 if(self.jogo.jogador==1):
                     self.jogo.B_10_clicado = 1
                     self.botao_10.configure(text = "X")
@@ -147,19 +144,16 @@ class Tabuleiro:
                     self.jogo.B_10_clicado = 2
                     self.botao_10.configure(text = "O")
                 self.jogo.muda_jogador()
+                    
                 self.jogo.verifica_vencedor()
-        if (self.jogo.venceu == 1):
-            self.label_vez.configure(text='Vencedor: Jogador 1')
-        elif (self.jogo.venceu == 2):
-            self.label_vez.configure(text='Vencedor: Jogador 2')
-        elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')
+                self.clique(1,0)
+       
             
      #      recebe_jogada(1,0)
     def botao_20clicado(self):
         if (self.jogo.B_20_clicado == 0):
             if (self.jogo.venceu==0):
-                self.clique(2,0)
+               
                 if(self.jogo.jogador==1):
                     self.jogo.B_20_clicado = 1
                     self.botao_20.configure(text = "X")
@@ -167,18 +161,14 @@ class Tabuleiro:
                     self.jogo.B_20_clicado = 2
                     self.botao_20.configure(text = "O")
                 self.jogo.muda_jogador()
+                
                 self.jogo.verifica_vencedor()
-        if (self.jogo.venceu == 1):
-            self.label_vez.configure(text='Vencedor: Jogador 1')
-        elif (self.jogo.venceu == 2):
-            self.label_vez.configure(text='Vencedor: Jogador 2')
-        elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')   
+                self.clique(2,0)
       #  recebe_jogada(2,0)
     def botao_11clicado(self):
         if (self.jogo.B_11_clicado == 0):
             if (self.jogo.venceu==0):
-                self.clique(1,1)
+                
                 if(self.jogo.jogador==1):
                     self.jogo.B_11_clicado = 1
                     self.botao_11.configure(text = "X")
@@ -186,18 +176,14 @@ class Tabuleiro:
                     self.jogo.B_11_clicado = 2
                     self.botao_11.configure(text = "O")
                 self.jogo.muda_jogador()
+                
                 self.jogo.verifica_vencedor()
-        if (self.jogo.venceu == 1):
-            self.label_vez.configure(text='Vencedor: Jogador 1')
-        elif (self.jogo.venceu == 2):
-            self.label_vez.configure(text='Vencedor: Jogador 2')
-        elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')    
+                self.clique(1,1)
       #  recebe_jogada(1,1)
     def botao_12clicado(self):
         if (self.jogo.B_12_clicado == 0):
             if (self.jogo.venceu==0):
-                self.clique(1,2)
+                
                 if(self.jogo.jogador==1):
                     self.jogo.B_12_clicado = 1
                     self.botao_12.configure(text = "X")
@@ -205,18 +191,15 @@ class Tabuleiro:
                     self.jogo.B_12_clicado = 2
                     self.botao_12.configure(text = "O")
                 self.jogo.muda_jogador()
+                
                 self.jogo.verifica_vencedor()
-        if (self.jogo.venceu == 1):
-            self.label_vez.configure(text='Vencedor: Jogador 1')
-        elif (self.jogo.venceu == 2):
-            self.label_vez.configure(text='Vencedor: Jogador 2')
-        elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')    
+                self.clique(1,2)
+       
       #  recebe_jogada(1,2)
     def botao_21clicado(self):
         if (self.jogo.B_21_clicado == 0):
             if (self.jogo.venceu==0):
-                self.clique(2,1)
+                
                 if(self.jogo.jogador==1):
                     self.jogo.B_21_clicado = 1
                     self.botao_21.configure(text = "X")
@@ -224,18 +207,15 @@ class Tabuleiro:
                     self.jogo.B_21_clicado = 2
                     self.botao_21.configure(text = "O")
                 self.jogo.muda_jogador()
+                
                 self.jogo.verifica_vencedor()
-        if (self.jogo.venceu == 1):
-            self.label_vez.configure(text='Vencedor: Jogador 1')
-        elif (self.jogo.venceu == 2):
-            self.label_vez.configure(text='Vencedor: Jogador 2')
-        elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')    
+                self.clique(2,1)
+           
       #  recebe_jogada(2,1)
     def botao_22clicado(self):
         if (self.jogo.B_22_clicado == 0):
             if (self.jogo.venceu==0):
-                self.clique(2,2)
+                
                 if(self.jogo.jogador==1):
                     self.jogo.B_22_clicado = 1
                     self.botao_22.configure(text = "X")
@@ -243,18 +223,15 @@ class Tabuleiro:
                     self.jogo.B_22_clicado = 2
                     self.botao_22.configure(text = "O")
                 self.jogo.muda_jogador()
+                
                 self.jogo.verifica_vencedor()
-        if (self.jogo.venceu == 1):
-            self.label_vez.configure(text='Vencedor: Jogador 1')
-        elif (self.jogo.venceu == 2):
-            self.label_vez.configure(text='Vencedor: Jogador 2')
-        elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')    
+                self.clique(2,2)
+        
      #   recebe_jogada(2,2)
     def botao_02clicado(self):
         if (self.jogo.B_02_clicado == 0):
             if (self.jogo.venceu==0):
-                self.clique(0,2)
+                
                 if(self.jogo.jogador==1):
                     self.jogo.B_02_clicado = 1
                     self.botao_02.configure(text = "X")
@@ -262,13 +239,10 @@ class Tabuleiro:
                     self.jogo.B_02_clicado = 2
                     self.botao_02.configure(text = "O")
                 self.jogo.muda_jogador()
+               
                 self.jogo.verifica_vencedor()
-        if (self.jogo.venceu == 1):
-            self.label_vez.configure(text='Vencedor: Jogador 1')
-        elif (self.jogo.venceu == 2):
-            self.label_vez.configure(text='Vencedor: Jogador 2')
-        elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')    
+                self.clique(0,2)
+        
       #  recebe_jogada(0,2)
 
     def iniciar(self):
@@ -296,19 +270,14 @@ class Tabuleiro:
         self.jogo.venceu= 0
         self.jogo.jogador=1
         self.label_vez.configure(text='Vez do: Jogador 1')
+       
 #    def encerrar_jogo(self.jogo.venceu, self.jogo.vencedor):
 #        if (self.jogo.venceu=True):
 #            if (self.jogo.vencedor==1):
 #                m
 #            if (self.jogo.vencedor==2):
 #            if (self.jogo.vencedor==3):
-    def quem_venceu(self):
-        if (self.jogo.venceu == 1):
-            self.label_vez.configure(text='Vencedor: Jogador 1')
-        elif (self.jogo.venceu == 2):
-            self.label_vez.configure(text='Vencedor: Jogador 2')
-        elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')
+    
 
 app = Tabuleiro ()
 app.iniciar()

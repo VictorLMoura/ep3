@@ -24,7 +24,7 @@ class Jogo:
     def X_vencedor (self):
       self.venceu=1
       self.vencedor=1
-      self.quem_venceu()
+      
       
     def Y_vencedor (self):
       self.venceu=2
@@ -45,6 +45,6 @@ class Jogo:
             
             
       elif (self.B_00_clicado != 0) and (self.B_01_clicado != 0) and (self.B_02_clicado != 0) and (self.B_10_clicado != 0) and (self.B_11_clicado != 0) and (self.B_12_clicado != 0) and (self.B_20_clicado != 0) and (self.B_21_clicado != 0) and (self.B_22_clicado != 0):
-         self.label_vez.configure(text='Deu Velha!')
+         
          self.Velha()
            
