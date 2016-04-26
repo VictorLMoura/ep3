@@ -2,6 +2,7 @@ class Jogo:
     def __init__(self):
         self.jogador=1
         self.venceu = False
+        self.vencedor= 0
       
     def muda_jogador(self):
       if (self.jogador==1):
@@ -13,18 +14,20 @@ class Jogo:
     def X_vencedor (self):
       self.label_vez.configure(text='Vencedor: Jogador 1')
       self.venceu=True
-        
+      self.vencedor=1
     def Y_vencedor (self):
       self.label_vez.configure(text='Vencedor: Jogador 2')
       self.venceu=True
+      self.vencedor=2
     
     def Velha (self):
       self.venceu=True
+      self.vencedor=3
          
     def verifica_vencedor (self):
       
       if (self.botao_00["text"] =="X" and  self.botao_01["text"] =="X" and  self.botao_02["text"] =="X") or (self.botao_00["text"] =="X" and  self.botao_10["text"] =="X" and  self.botao_20["text"] =="X") or (self.botao_00["text"] =="X" and  self.botao_11["text"] =="X" and  self.botao_22["text"] =="X") or (self.botao_10["text"] =="X" and  self.botao_11["text"] =="X" and  self.botao_12["text"] =="X") or (self.botao_20["text"] =="X" and  self.botao_21["text"] =="X" and  self.botao_22["text"] =="X") or (self.botao_01["text"] =="X" and  self.botao_11["text"] =="X" and  self.botao_21["text"] =="X") or (self.botao_02["text"] =="X" and  self.botao_12["text"] =="X" and  self.botao_22["text"] =="X") or (self.botao_02["text"] =="X" and  self.botao_11["text"] =="X" and  self.botao_20["text"] =="X")  :
-       self.X_vencedor ()   
+          self.X_vencedor ()   
          
             
                                 
