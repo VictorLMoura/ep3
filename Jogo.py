@@ -35,7 +35,6 @@ class Jogo:
       self.venceu=1
       self.vencedor=1
       
-      
     def Y_vencedor (self):
       self.venceu=2
       self.vencedor=2
@@ -49,12 +48,9 @@ class Jogo:
       if (self.B_00_clicado==1 and  self.B_01_clicado==1 and  self.B_02_clicado==1) or (self.B_00_clicado==1 and  self.B_10_clicado==1 and  self.B_20_clicado==1) or (self.B_00_clicado==1 and  self.B_11_clicado==1 and  self.B_22_clicado==1) or (self.B_10_clicado==1 and  self.B_11_clicado==1 and  self.B_12_clicado==1) or (self.B_20_clicado==1 and  self.B_21_clicado==1 and  self.B_22_clicado==1) or (self.B_01_clicado==1 and  self.B_11_clicado==1 and  self.B_21_clicado==1) or (self.B_02_clicado==1 and  self.B_12_clicado==1 and  self.B_22_clicado==1) or (self.B_02_clicado==1 and  self.B_11_clicado==1 and  self.B_20_clicado==1)  :
           self.X_vencedor () 
          
-            
       if (self.B_00_clicado==2 and  self.B_01_clicado==2 and  self.B_02_clicado==2) or (self.B_00_clicado==2 and  self.B_10_clicado==2 and  self.B_20_clicado==2) or (self.B_00_clicado==2 and  self.B_11_clicado==2 and  self.B_22_clicado==2) or (self.B_10_clicado==2 and  self.B_11_clicado==2 and  self.B_12_clicado==2) or (self.B_20_clicado==2 and  self.B_21_clicado==2 and  self.B_22_clicado==2) or (self.B_01_clicado==2 and  self.B_11_clicado==2 and  self.B_21_clicado==2) or (self.B_02_clicado==2 and  self.B_12_clicado==2 and  self.B_22_clicado==2) or (self.B_02_clicado==2 and  self.B_11_clicado==2 and  self.B_20_clicado==2)  :
          self.Y_vencedor () 
             
-            
       elif (self.B_00_clicado != 0) and (self.B_01_clicado != 0) and (self.B_02_clicado != 0) and (self.B_10_clicado != 0) and (self.B_11_clicado != 0) and (self.B_12_clicado != 0) and (self.B_20_clicado != 0) and (self.B_21_clicado != 0) and (self.B_22_clicado != 0):
-         
          self.Velha()
            
