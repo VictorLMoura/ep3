@@ -2,15 +2,10 @@ import tkinter as tk
 import Jogo
 class Tabuleiro:
     def __init__(self):
-        #import Jogo #, precisamos importar a classe Jogo para usar o atributo jogador
-#CRIANDO OS BOTOES    
         self.jogo=Jogo.Jogo()
         self.window = tk.Tk()
-        #DANDO UM NOME A JANELA
         self.window.title("Jogo da Velha!")
-        #DANDO TAMANHO AO TABULEIRO
         self.window.geometry("400x400")
-        #DANDO UM TAMANHO AOS BOTOES
         self.window.rowconfigure(0, minsize=100,weight=1)
         self.window.rowconfigure(1,minsize=100,weight=1)
         self.window.rowconfigure(2, minsize=100,weight=1)
@@ -18,11 +13,9 @@ class Tabuleiro:
         self.window.columnconfigure(0, minsize=100,weight=1)
         self.window.columnconfigure(1, minsize=100,weight=1)
         self.window.columnconfigure(2, minsize=100,weight=1)
-        #DANDO TAMANHO A INDICAÇÃO DE JOGADOR USANDO LABEL
         
         
-        self.botao_00 = tk.Button (self.window) #00 é a localização do botao esse no caso é o superior esquerdo
-        #REALIZAR AÇÃO QUANDO CLICADO
+        self.botao_00 = tk.Button (self.window) 
         self.botao_00.grid(row=0,column=0,sticky="nsew")
         self.botao_00.configure(command= self.botao_00clicado)
 
@@ -70,7 +63,6 @@ class Tabuleiro:
         self.label_vez.grid(row = 3, column = 0, columnspan=3)
         self.label_vez.configure(text='Vez do: Jogador 1')        
         
-  #AÇÕES DOS BOTÕES , SÓ UM EXEMPLO
     def clique (self, i, j):
         if (self.jogo.jogador==1):
             self.label_vez = tk.Label(self.window)
@@ -102,8 +94,6 @@ class Tabuleiro:
                 self.jogo.verifica_vencedor()
                 self.clique(0,0)
             
-            
-       # recebe_jogada(0,0)
     def botao_01clicado(self):
         if (self.jogo.B_01_clicado == 0):
             if (self.jogo.venceu==0):
@@ -117,8 +107,6 @@ class Tabuleiro:
                 self.jogo.verifica_vencedor()
                 self.clique(0,1)
 
-        
-      #  recebe_jogada(0,1)
     def botao_10clicado(self):
         if (self.jogo.B_10_clicado == 0):
             if (self.jogo.venceu==0):
@@ -131,7 +119,7 @@ class Tabuleiro:
                 self.jogo.muda_jogador()
                 self.jogo.verifica_vencedor()
                 self.clique(1,0)
-     #      recebe_jogada(1,0)
+
     def botao_20clicado(self):
         if (self.jogo.B_20_clicado == 0):
             if (self.jogo.venceu==0):
@@ -145,7 +133,6 @@ class Tabuleiro:
                 self.jogo.verifica_vencedor()
                 self.clique(2,0)
                 
-      #  recebe_jogada(2,0)
     def botao_11clicado(self):
         if (self.jogo.B_11_clicado == 0):
             if (self.jogo.venceu==0):
@@ -159,7 +146,6 @@ class Tabuleiro:
                 self.jogo.verifica_vencedor()
                 self.clique(1,1)
                 
-      #  recebe_jogada(1,1)
     def botao_12clicado(self):
         if (self.jogo.B_12_clicado == 0):
             if (self.jogo.venceu==0):
@@ -173,7 +159,6 @@ class Tabuleiro:
                 self.jogo.verifica_vencedor()
                 self.clique(1,2)                
                 
-      #  recebe_jogada(1,2)
     def botao_21clicado(self):
         if (self.jogo.B_21_clicado == 0):
             if (self.jogo.venceu==0):
@@ -187,7 +172,6 @@ class Tabuleiro:
                 self.jogo.verifica_vencedor()
                 self.clique(2,1)
                 
-      #  recebe_jogada(2,1)
     def botao_22clicado(self):
         if (self.jogo.B_22_clicado == 0):
             if (self.jogo.venceu==0):
@@ -201,10 +185,10 @@ class Tabuleiro:
                 self.jogo.verifica_vencedor()
                 self.clique(2,2)
                 
-                #   recebe_jogada(2,2)
     def botao_02clicado(self):
         if (self.jogo.B_02_clicado == 0):
             if (self.jogo.venceu==0):
+                self.clique(0,2)
                 if(self.jogo.jogador==1):
                     self.jogo.B_02_clicado = 1
                     self.botao_02.configure(text = "X")
@@ -215,8 +199,6 @@ class Tabuleiro:
                 self.jogo.verifica_vencedor()
                 self.clique(0,2)
   
-      #  recebe_jogada(0,2)
-
     def iniciar(self):
         self.window.mainloop()
         
@@ -234,13 +216,6 @@ class Tabuleiro:
         self.jogo.venceu= 0
         self.jogo.jogador=1
         self.label_vez.configure(text='Vez do: Jogador 1')
-#    def encerrar_jogo(self.jogo.venceu, self.jogo.vencedor):
-#        if (self.jogo.venceu=True):
-#            if (self.jogo.vencedor==1):
-#                m
-#            if (self.jogo.vencedor==2):
-#            if (self.jogo.vencedor==3):
-    
 
 app = Tabuleiro ()
 app.iniciar()
