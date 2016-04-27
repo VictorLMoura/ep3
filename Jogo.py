@@ -13,7 +13,17 @@ class Jogo:
         self.B_22_clicado = 0
         self.B_21_clicado = 0
         
-       
+    def limpar_jogada(self):
+        self.B_00_clicado = 0
+        self.B_10_clicado = 0
+        self.B_20_clicado = 0
+        self.B_01_clicado = 0
+        self.B_02_clicado = 0
+        self.B_11_clicado = 0
+        self.B_12_clicado = 0
+        self.B_21_clicado = 0
+        self.B_22_clicado = 0
+        
     def muda_jogador(self):
       if (self.jogador==1):
           self.jogador = 2
