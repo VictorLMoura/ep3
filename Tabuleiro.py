@@ -79,7 +79,7 @@ class Tabuleiro:
         elif (self.jogo.venceu == 2):
             self.label_vez.configure(text='Vencedor: Jogador 2')
         elif (self.jogo.venceu == 3):
-            self.label_vez.configure(text='Deu Velha')
+            self.label_vez.configure(text='Empate: Deu Velha')
         
     def botao_00clicado(self):
         if (self.jogo.B_00_clicado == 0):
