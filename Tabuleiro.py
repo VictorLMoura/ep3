@@ -68,12 +68,12 @@ class Tabuleiro:
             self.label_vez = tk.Label(self.window)
             self.label_vez.configure(font="Courier 14 bold")
             self.label_vez.grid(row = 3, column = 0, columnspan=3)
-            self.label_vez.configure(text='Vez do: Jogador 2')
+            self.label_vez.configure(text='Vez do: Jogador 1')
         elif (self.jogo.jogador==2):
             self.label_vez = tk.Label(self.window)
             self.label_vez.configure(font="Courier 14 bold")
             self.label_vez.grid(row = 3, column = 0, columnspan=3)
-            self.label_vez.configure(text='Vez do: Jogador 1')
+            self.label_vez.configure(text='Vez do: Jogador 2')
         if (self.jogo.venceu == 1):
             self.label_vez.configure(text='Vencedor: Jogador 1')
         elif (self.jogo.venceu == 2):
@@ -213,8 +213,6 @@ class Tabuleiro:
         self.botao_22.configure(text = "")
         self.botao_21.configure(text = "")
         self.jogo.limpar_jogada()
-        self.jogo.venceu= 0
-        self.jogo.jogador=1
         self.label_vez.configure(text='Vez do: Jogador 1')
 
 app = Tabuleiro ()
